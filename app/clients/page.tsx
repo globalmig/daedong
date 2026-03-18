@@ -53,7 +53,7 @@ export default function ClientsPage() {
           오랜 신뢰 관계를 바탕으로 고객의 요구에 맞는 최고의 품질을 제공하겠습니다.
         </p>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {clients.map((client, index) => (
             <div key={index} className="flex flex-col items-center gap-6 border border-gray-200 rounded-2xl p-8 shadow-sm hover:shadow-lg transition bg-white">
               {/* 로고 영역 */}
