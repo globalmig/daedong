@@ -22,7 +22,7 @@ export default function main() {
             <h2 className="opacity-70">주요 거래처</h2>
             <p className="text-black/50 mt-2">Major Clients</p>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               { name: "삼성SDI", src: "/img/logo_samsung_sdi.png" },
               { name: "삼성바이오로직스", src: "/img/logo_samsung_biologics.png" },
