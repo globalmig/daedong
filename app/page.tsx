@@ -26,11 +26,20 @@ export default function main() {
             {[
               { name: "삼성SDI", src: "/img/logo_samsung_sdi.png" },
               { name: "삼성바이오로직스", src: "/img/logo_samsung_biologics.png" },
+              { name: "서울대학교", src: "/img/logo_snu.png" },
+              { name: "한국과학기술원", src: "/img/logo_kaist.png" },
+              { name: "한양대학교", src: "/img/logo_hanyang.png" },
+              { name: "중앙대학교", src: "/img/logo_chungang.png" },
+              { name: "홍익대학교", src: "/img/logo_hongik.png" },
               { name: "세종대학교", src: "/img/logo_sejong.png" },
               { name: "건국대학교", src: "/img/logo_konkuk.png" },
+              { name: "단국대학교", src: "/img/logo_dankook.png" },
+              { name: "순천향대학교", src: "/img/logo_soonchunhyang.png" },
+              { name: "호서대학교", src: "/img/logo_hoseo.png" },
+              { name: "한국공과대학교", src: "/img/logo_koreatech.png" },
             ].map((client) => (
-              <Link key={client.name} href="/clients" className="flex items-center justify-center border bg-white border-gray-200 rounded-xl px-8 py-10 hover:border-sky-400 transition">
-                <div className="relative w-full h-16">
+              <Link key={client.name} href="/clients" className="flex items-center justify-center border bg-white border-gray-200 rounded-xl px-6 py-8 hover:border-sky-400 transition">
+                <div className="relative w-full h-24">
                   <Image src={client.src} alt={client.name} fill className="object-contain" />
                 </div>
               </Link>
