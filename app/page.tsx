@@ -29,7 +29,7 @@ export default function main() {
               { name: "세종대학교", src: "/img/logo_sejong.png" },
               { name: "건국대학교", src: "/img/logo_konkuk.png" },
             ].map((client) => (
-              <Link key={client.name} href="/work" className="flex items-center justify-center border bg-white border-gray-200 rounded-xl px-8 py-10 hover:border-sky-400 transition">
+              <Link key={client.name} href="/clients" className="flex items-center justify-center border bg-white border-gray-200 rounded-xl px-8 py-10 hover:border-sky-400 transition">
                 <div className="relative w-full h-16">
                   <Image src={client.src} alt={client.name} fill className="object-contain" />
                 </div>
