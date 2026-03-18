@@ -2,7 +2,19 @@
 
 import { useState } from "react";
 import { Mail, Phone } from "lucide-react";
-import Link from "next/link";
+
+const PHONE = "02-463-9942";
+
+function handlePhoneClick() {
+  const isMobile = /Mobi|Android|iPhone|iPad/i.test(navigator.userAgent);
+  if (isMobile) {
+    window.location.href = `tel:${PHONE.replace(/-/g, "")}`;
+  } else {
+    navigator.clipboard.writeText(PHONE).then(() => {
+      alert(`전화번호가 복사되었습니다.\n${PHONE}`);
+    });
+  }
+}
 
 export default function ContactSection() {
   const [open, setOpen] = useState<string | null>(null);
@@ -54,9 +66,9 @@ export default function ContactSection() {
         </div>
 
         {/* 문의 버튼 */}
-        <Link href={"/board"} className="inline-block rounded-md py-3 px-16 mt-10 bg-white text-zinc-700 hover:bg-sky-300 hover:text-zinc-600 text-center font-bold shadow-sm">
+        <button onClick={handlePhoneClick} className="inline-block rounded-md py-3 px-16 mt-10 bg-white text-zinc-700 hover:bg-sky-300 hover:text-zinc-600 text-center font-bold shadow-sm">
           문의하기
-        </Link>
+        </button>
       </div>
     </div>
   );

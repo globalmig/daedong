@@ -5,6 +5,7 @@ import Work from "@/components/Work";
 import ProductList from "@/components/ProductList";
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function main() {
   return (
@@ -28,11 +29,11 @@ export default function main() {
               { name: "세종대학교", src: "/img/logo_sejong.png" },
               { name: "건국대학교", src: "/img/logo_konkuk.png" },
             ].map((client) => (
-              <div key={client.name} className="flex items-center justify-center border bg-white border-gray-200 rounded-xl px-8 py-10">
+              <Link key={client.name} href="/work" className="flex items-center justify-center border bg-white border-gray-200 rounded-xl px-8 py-10 hover:border-sky-400 transition">
                 <div className="relative w-full h-16">
                   <Image src={client.src} alt={client.name} fill className="object-contain" />
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>
