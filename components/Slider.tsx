@@ -28,27 +28,27 @@ export default function Slider() {
         className="mySwiper white-text w-full h-full"
       >
         <SwiperSlide className="relative">
-          <Image src="/img/bg_slider01.jpg" alt="Slide 1" fill priority sizes="100vw" quality={85} className="object-cover" />
+          <Image src="/img/hero1.jpg" alt="Slide 1" fill priority sizes="100vw" quality={85} className="object-cover" />
           <div className="bg-black/40 w-full h-full absolute"></div>
           <div className="relative px-4 break-keep">
-            <h2>대표 관세사가 직접 수행·책임, LK 관세사무소 </h2>
-            <p>사업 규모가 아니라, 소수만 맡아 끝까지 책임집니다.</p>
+            <h2>30년 이상의 기술력과 신뢰, 대동정밀</h2>
+            <p>1995년 창업 이래, 최선의 노력과 믿음으로 우수한 제품을 제공합니다.</p>
           </div>
         </SwiperSlide>
         <SwiperSlide className="relative">
-          <Image src="/img/bg_slider02.jpg" alt="Slide 3" fill priority sizes="100vw" quality={85} className="object-cover" />
+          <Image src="/img/car.jpg" alt="Slide 2" fill priority sizes="100vw" quality={85} className="object-cover" />
           <div className="bg-black/40 w-full h-full absolute"></div>
           <div className="relative px-4 break-keep">
-            <h2>복잡한 통관 절차, 믿을 수 있는 전문가와 함께하세요.</h2>
-            <p>국제 무역의 든든한 파트너로서, 정확하고 신속한 통관 서비스를 제공합니다.</p>
+            <h2>정밀 가공부터 자동화 장비까지, 대동정밀</h2>
+            <p>금속 시험편, 호이스트, 컨베어, 각종 감속기 등 다양한 산업 장비를 제작합니다.</p>
           </div>
         </SwiperSlide>
         <SwiperSlide className="relative">
           <Image src="/img/bg_slider03.jpg" alt="Slide 3" fill priority sizes="100vw" quality={85} className="object-cover" />
           <div className="bg-black/40 w-full h-full absolute"></div>
           <div className="relative px-4 break-keep">
-            <h2>수출입 절차, 믿을 수 있는 전문가와 함께하세요.</h2>
-            <p>처음부터 끝까지 함께하는 관세 파트너로, 고객의 안심을 책임집니다.</p>
+            <h2>삼성SDI, 삼성바이오로직스가 신뢰하는 파트너</h2>
+            <p>국내 주요 기업 및 대학교와 함께하는 검증된 정밀 제조 전문 기업입니다.</p>
           </div>
         </SwiperSlide>
       </Swiper>

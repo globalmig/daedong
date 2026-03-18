@@ -22,7 +22,7 @@ export default function Figure02(item: Figure01Props) {
         {/* 텍스트 영역 */}
         <div className={`w-full md:w-[50%] text-slate-800 ${item.direction === "left" ? "text-left" : "text-right"} text-center flex flex-col`}>
           <h3 className="text-2xl md:text-4xl  leading-snug">
-            <strong className="text-cyan-800">이은경</strong> 대표 관세사
+            <strong className="text-cyan-800">{item.title}</strong>
           </h3>
           <p className="text-4xl m-5 mb-10 font-bold text-black/20">Profile</p>
           <div className="w-10 h-[0.4px] mx-auto mb-6 bg-black/20"></div>
@@ -34,8 +34,6 @@ export default function Figure02(item: Figure01Props) {
                   {desc}
                 </li>
               ))}
-              <p className="p-0 m-0">- 전문분야: 수출입통관, FTA</p>
-              <p className="p-0 m-0">- 이전가격심사 전문관세사</p>
             </ul>
           ) : (
             <pre className="whitespace-pre-wrap break-words leading-relaxed text-lg">{item.description}</pre>

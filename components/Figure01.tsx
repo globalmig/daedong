@@ -16,7 +16,7 @@ export default function Figure01(item: Figure01Props) {
       >
         {/* 부모 div에 relative + 크기 지정 */}
         <div className="relative w-full md:w-[60%] h-[400px] ">
-          <Image src={`${item.imgSrc}`} alt="figure_01" fill className="object-cover rounded-lg object-top shadow-lg" />
+          <Image src={`${item.imgSrc}`} alt="figure_01" fill className="object-contain rounded-lg shadow-lg" />
         </div>
 
         <figcaption className={`text-sm w-full md:w-[40%] ${item.direction === "left" ? "text-start" : "text-end"} mt-2 text-gray-600`}>

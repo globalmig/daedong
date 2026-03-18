@@ -6,15 +6,15 @@ export default function Footer() {
   return (
     <div className="py-10 bg-slate-800 text-white/60 text-center mx-auto">
       <Link href={"/"} className="flex justify-center font-bold pb-6 opacity-40">
-        <Image src={"/logo_white.png"} alt="LK관세사무소" width={140} height={40} className="hidden md:block" />
-        <Image src={"/logo_white.png"} alt="LK관세사무소" width={80} height={40} className="md:hidden block" />
+        <Image src={"/logo_white.png"} alt="대동정밀" width={140} height={40} className="hidden md:block" />
+        <Image src={"/logo_white.png"} alt="대동정밀" width={80} height={40} className="md:hidden block" />
       </Link>
 
-      <p className="text-sm">주소: 서울시 강남구 테헤란로 20길 18 부봉빌딩 6층, 608호</p>
-      <p className="text-sm">카톡 ID: lkcus</p>
-      <p className="text-sm">전화: 02-552-2893</p>
-      <p className="text-sm">이메일: admin@lkcustoms.co.kr</p>
-      <p className="mt-4 text-sm">© 2025 LK 관세사무소 INDUSTRY. All rights reserved.</p>
+      <p className="text-sm">주소: 서울시 성동구 광나루로 229 1층 (송정동 81-18)</p>
+      <p className="text-sm">전화: 02-463-9942 &nbsp;|&nbsp; 휴대폰: 010-5245-4462</p>
+      <p className="text-sm">팩스: 02-466-3018</p>
+      <p className="text-sm">이메일: dedong4462@naver.com</p>
+      <p className="mt-4 text-sm">© 2025 대동정밀. All rights reserved.</p>
       <p className="text-sm">DESIGN & Development BY GLOBAL MIG</p>
     </div>
   );

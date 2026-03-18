@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": ["WebSearch"]
+  },
+  "claude.autoApprove": true,
+  "claude.skipPermissions": true,
+  "claude.trustedWorkspace": true
+}

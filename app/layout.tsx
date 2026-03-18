@@ -19,38 +19,38 @@ const geistMono = localFont({
 
 // ✅ SEO 메타데이터
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.lkcustoms.co.kr"), // 실제 도메인
+  metadataBase: new URL("https://www.daedong-precision.co.kr"),
   title: {
-    default: "LK 관세사무소 | 수출입 통관·FTA·관세환급 전문",
-    template: "%s | LK 관세사무소",
+    default: "대동정밀 | 시험편·지그 장비·호이스트·컨베어 전문 제작",
+    template: "%s | 대동정밀",
   },
-  description: "LK 관세사무소는 수출입 통관, FTA 컨설팅, 관세환급, 식품검역 등 다양한 관세 관련 업무를 전문적으로 수행합니다.",
-  keywords: ["LK 관세사무소", "수입통관", "수출통관", "관세환급", "FTA 컨설팅", "식품검역", "수출입 대행", "세관 신고", "통관 전문"],
-  authors: [{ name: "LK 관세사무소", url: "https://www.lkcustoms.co.kr" }],
+  description: "대동정밀은 1995년 창업 이래 30년 이상의 기술력으로 금속 인장시험편, 충격시험편, 호이스트, 컨베어, 각종 감속기 교체 장비, 지그 판금 가공용접을 전문 제작합니다.",
+  keywords: ["대동정밀", "인장시험편", "충격시험편", "샤르피시험편", "호이스트", "컨베어", "감속기", "지그제작", "판금가공", "시험기기", "정밀부품"],
+  authors: [{ name: "대동정밀" }],
   openGraph: {
     type: "website",
-    url: "https://www.lkcustoms.co.kr",
-    title: "LK 관세사무소 | 수출입 통관·FTA·관세환급 전문",
-    description: "수출입 통관, FTA 협정, 관세환급, 식품검역 등 전문 서비스를 제공합니다.",
-    siteName: "LK 관세사무소",
+    url: "https://www.daedong-precision.co.kr",
+    title: "대동정밀 | 시험편·지그 장비·호이스트·컨베어 전문 제작",
+    description: "1995년 창업, 30년 이상의 경험과 기술력으로 정밀 시험편·장비·지그를 제작합니다.",
+    siteName: "대동정밀",
     images: [
       {
-        url: "https://www.lkcustoms.co.kr/img/SEO.png", // og 이미지 (public 폴더에)
+        url: "https://www.daedong-precision.co.kr/img/SEO.png",
         width: 1200,
         height: 630,
-        alt: "LK 관세사무소 대표 이미지",
+        alt: "대동정밀 대표 이미지",
       },
     ],
     locale: "ko_KR",
   },
   twitter: {
     card: "summary_large_image",
-    title: "LK 관세사무소 | 수출입 통관·FTA·관세환급 전문",
-    description: "수출입 통관 및 FTA 컨설팅 전문, 관세 환급과 식품검역까지 한 번에.",
-    images: ["https://www.lkcustoms.co.kr/img/SEO.png"],
+    title: "대동정밀 | 시험편·지그 장비·호이스트·컨베어 전문 제작",
+    description: "1995년 창업, 삼성SDI·삼성바이오로직스·세종대·건국대 납품 이력의 정밀 부품 전문 제작업체.",
+    images: ["https://www.daedong-precision.co.kr/img/SEO.png"],
   },
   alternates: {
-    canonical: "https://www.lkcustoms.co.kr",
+    canonical: "https://www.daedong-precision.co.kr",
   },
   robots: {
     index: true,
@@ -68,7 +68,7 @@ export const metadata: Metadata = {
     apple: "/apple-touch-icon.png",
   },
   other: {
-    "naver-site-verification": "ac9ff0ce060a869f0f1826783d8ee5567fe32814",
+    // "naver-site-verification": "ac9ff0ce060a869f0f1826783d8ee5567fe32814",
   },
 };
 
@@ -86,18 +86,10 @@ export default function RootLayout({
         <footer className="mt-auto">
           <Footer />
           {/* <!-- 공통 적용 스크립트 , 모든 페이지에 노출되도록 설치. 단 전환페이지 설정값보다 항상 하단에 위치해야함 --> */}
-          <Script
-            src="//wsa.mig-log.com/wsalog.js"
-            strategy="afterInteractive"
-            onLoad={() => {
-              // @ts-ignore
-              window.wsa = window.wsa || {};
-              // @ts-ignore
-              window.wsa.inflow("www.lkcustoms.co.kr");
-              // @ts-ignore
-              window.wsa_do(window.wsa);
-            }}
-          />
+          <Script src="//wsa.mig-log.com/wsalog.js" strategy="afterInteractive" />
+          <Script id="wsa-init" strategy="afterInteractive">
+            {`window.wsa = window.wsa || {}; window.wsa.inflow("www.daedong-precision.co.kr"); window.wsa_do(window.wsa);`}
+          </Script>
         </footer>
 
         {/* ✅ 구조화 데이터 (JSON-LD) */}
@@ -106,17 +98,21 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
-              "@type": "ProfessionalService",
-              name: "LK 관세사무소",
-              url: "https://www.lkcustoms.co.kr",
-              description: "수출입 통관, FTA 컨설팅, 관세환급, 식품검역 등 관세 전문 서비스 제공.",
+              "@type": "LocalBusiness",
+              name: "대동정밀",
+              url: "https://www.daedong-precision.co.kr",
+              description: "금속 인장시험편, 충격시험편, 호이스트, 컨베어, 감속기 교체 장비, 지그 판금 가공용접 전문 제작.",
               address: {
                 "@type": "PostalAddress",
                 addressCountry: "KR",
                 addressLocality: "서울특별시",
-                addressRegion: "강남구",
+                addressRegion: "성동구",
+                streetAddress: "광나루로 229 1층 (송정동 81-18)",
               },
-              telephone: "02-552-2893",
+              telephone: "02-463-9942",
+              faxNumber: "02-466-3018",
+              email: "dedong4462@naver.com",
+              foundingDate: "1995-07-08",
             }),
           }}
         />
