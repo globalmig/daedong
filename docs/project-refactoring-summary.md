@@ -240,7 +240,79 @@ robots: { index: true, follow: true, googleBot: { ... } }
 
 ---
 
-## 6. 변경 파일 목록 요약
+## 6. 버그 수정 및 빌드 오류 해결
+
+### 6-1. Work.tsx — 타이틀 위치 불균일 문제
+
+**문제**: 사업영역 카드에서 설명 텍스트가 `opacity-0`으로 숨겨져 있어도 **레이아웃 공간을 그대로 차지**함.  
+설명 텍스트 줄 수가 카드마다 달라 타이틀 위치가 들쭉날쭉하게 보이는 문제.
+
+**원인**: `opacity-0`은 시각적으로만 숨기고 높이(height)는 유지함. `flex-col justify-end` 구조에서 설명 높이만큼 타이틀이 위로 밀림.
+
+**해결**: `opacity` 방식 → `max-h-0 overflow-hidden` 방식으로 교체. 기본 상태에서 높이가 0이므로 타이틀이 항상 같은 위치에 고정됨.
+
+```diff
+- <h3 className="... mb-3">{item.title}</h3>
+- <p className="opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-500 ease-out">
+-   {item.description}
+- </p>
+
++ <h3 className="... mb-0 group-hover:mb-3 transition-all duration-500">{item.title}</h3>
++ <div className="overflow-hidden max-h-0 group-hover:max-h-24 transition-all duration-500 ease-out">
++   <p>{item.description}</p>
++ </div>
+```
+
+| 항목 | 변경 전 | 변경 후 |
+|------|---------|---------|
+| 숨김 방식 | `opacity-0` (공간 유지) | `max-h-0 overflow-hidden` (공간 제거) |
+| 타이틀 위치 | 카드마다 불균일 | 항상 동일 위치 |
+| 타이틀 여백 | `mb-3` 고정 | `mb-0` → hover 시 `mb-3` 애니메이션 |
+
+---
+
+### 6-2. app/work/page.tsx — Vercel 빌드 오류 (`useSearchParams` Suspense 누락)
+
+**문제**: Vercel 배포 시 빌드 실패
+
+```
+⨯ useSearchParams() should be wrapped in a suspense boundary at page "/work"
+Error: Command "npm run build" exited with 1
+```
+
+**원인**: Next.js App Router에서 `useSearchParams()`는 클라이언트 사이드에서만 동작하므로, 정적 생성(SSG) 단계에서 Suspense 경계 없이 호출하면 빌드가 중단됨.
+
+**해결**: `useSearchParams()`를 포함한 로직을 별도 클라이언트 컴포넌트로 분리하고, `page.tsx`에서 `<Suspense>`로 감쌈.
+
+```
+app/work/
+├── page.tsx         ← 서버 컴포넌트 (Hero + <Suspense> shell)
+└── WorkContent.tsx  ← 클라이언트 컴포넌트 ("use client", useSearchParams 등 모든 훅 포함)
+```
+
+```tsx
+// page.tsx (서버 컴포넌트)
+export default function WorkPage() {
+  return (
+    <>
+      <Hero ... />
+      <Suspense>
+        <WorkContent />
+      </Suspense>
+    </>
+  );
+}
+```
+
+```tsx
+// WorkContent.tsx (클라이언트 컴포넌트)
+"use client";
+// useSearchParams, useRouter, useState, useEffect 등 모든 훅 포함
+```
+
+---
+
+## 7. 변경 파일 목록 요약
 
 | 파일 | 변경 유형 | 내용 요약 |
 |------|----------|----------|
@@ -248,13 +320,14 @@ robots: { index: true, follow: true, googleBot: { ... } }
 | `app/globals.css` | 수정 | 폰트 패밀리, 타이포그래피 기본값 |
 | `app/page.tsx` | 수정 | 섹션 컴포넌트 조합 구조로 재편 |
 | `app/company/page.tsx` | 수정 | 대표 소개 + 인사말 섹션 추가 |
-| `app/work/page.tsx` | 수정 | URL 쿼리 탭 필터, 모바일 드롭다운 |
+| `app/work/page.tsx` | 수정 | Suspense shell로 교체 (빌드 오류 해결) |
+| `app/work/WorkContent.tsx` | **신규** | 기존 work 로직 분리, 클라이언트 컴포넌트 |
 | `app/clients/page.tsx` | 수정 | 전용 페이지로 분리, 카드 그리드 |
 | `app/map/page.tsx` | 수정 | 전용 페이지로 분리, 연락처 그리드 |
 | `components/GNB.tsx` | 수정 | 이미지 로고, 반응형 햄버거 메뉴 |
 | `components/Footer.tsx` | 수정 | 이미지 로고, 연락처 정보 |
 | `components/Slider.tsx` | 수정 | Swiper 슬라이더, 스크롤 다운 버튼 |
-| `components/Work.tsx` | 수정 | 호버 확장 카드, 5개 사업영역 |
+| `components/Work.tsx` | 수정 | 호버 확장 카드, 타이틀 위치 균일화 |
 | `components/ProductList.tsx` | 수정 | 8종 제품 카드 그리드 |
 | `components/GoogleMap.tsx` | 수정 | iframe + 오버레이 정보 박스 |
 | `components/Figure01.tsx` | 수정 | direction prop 기반 레이아웃 |
