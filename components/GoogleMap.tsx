@@ -15,7 +15,7 @@ export default function GoogleMap() {
       ></iframe>
 
       {/* 정보 박스 */}
-      <div className="absolute top-2 left-6 bg-white p-4 rounded-md shadow-lg w-full max-w-[300px]">
+      <div className="absolute top-2 left-2 bg-white p-4 rounded-md shadow-lg w-full max-w-[310px]">
         <h3 className="font-bold text-lg mb-1">대동정밀</h3>
         <p className="text-sm mb-1">
           서울시 성동구 광나루로 229 1층
