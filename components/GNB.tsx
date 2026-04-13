@@ -6,12 +6,12 @@ import Image from "next/image";
 export default function GNB() {
   const [isSelected, setIsSelected] = useState(false);
   const toggleMenu = () => {
-    setIsSelected(!isSelected);
+    setIsSelected((prev) => !prev);
   };
 
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth >= 768 && isSelected) {
+      if (window.innerWidth >= 768) {
         setIsSelected(false);
       }
     };
@@ -19,30 +19,19 @@ export default function GNB() {
     return () => {
       window.removeEventListener("resize", handleResize);
     };
-  }, [isSelected]);
+  }, []);
 
   return (
-    <div className={`flex justify-between items-center absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-[1440px] h-16 white-text py-12 px-4 z-50 ${isSelected ? "bg-slate-800" : "bg-none"}`}>
+    <div className={`flex justify-between items-center absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-[1440px] h-16 white-text py-12 px-4 z-50 ${isSelected ? "bg-slate-800" : "bg-transparent"}`}>
       <Link href={"/"} className="text-3xl md:text-3xl font-bold mb-6 mt-2 md:mt-6">
-        <Image src={"/logo_white.png"} alt="LK관세사무소" width={200} height={40} className="hidden md:block" />
-        <Image src={"/logo_white.png"} alt="LK관세사무소" width={100} height={40} className="md:hidden block" />
+        <Image src={"/logo_white.png"} alt="대동정밀" width={200} height={50} className="h-7 md:h-9 w-auto" />
       </Link>
       <ul className="md:flex hidden">
-        <Link href={"/company"} className="px-6">
-          회사소개
-        </Link>
-        <Link href={"/work"} className="px-6">
-          제품소개
-        </Link>
-        <Link href={"/clients"} className="px-6">
-          주요거래처
-        </Link>
-        {/* <Link href={"/board"} className="px-6">
-          상담문의
-        </Link> */}
-        <Link href={"/map"} className="px-6">
-          오시는 길
-        </Link>
+        <li><Link href={"/company"} className="px-6">회사소개</Link></li>
+        <li><Link href={"/work"} className="px-6">제품소개</Link></li>
+        <li><Link href={"/clients"} className="px-6">주요거래처</Link></li>
+        {/* <li><Link href={"/board"} className="px-6">상담문의</Link></li> */}
+        <li><Link href={"/map"} className="px-6">오시는 길</Link></li>
       </ul>
       <div className="flex md:hidden">
         <button className="flex flex-col gap-1 white-text" onClick={toggleMenu} aria-label="Toggle Menu">
@@ -51,26 +40,13 @@ export default function GNB() {
           <span className="block w-6 h-0.5 bg-white"></span>
         </button>
         {isSelected && (
-          <>
-            <div className="bg-black/50 w-full h-full"></div>
-            <ul className="flex flex-col absolute top-16 right-0 bg-slate-800 white-text w-full text-center border-rounded-b-md">
-              <Link href={"/company"} className="py-8" onClick={toggleMenu}>
-                회사소개
-              </Link>
-              <Link href={"/work"} className="py-8" onClick={toggleMenu}>
-                제품소개
-              </Link>
-              <Link href={"/clients"} className="py-8" onClick={toggleMenu}>
-                주요거래처
-              </Link>
-              {/* <Link href={"/board"} className="py-8" onClick={toggleMenu}>
-                상담문의
-              </Link> */}
-              <Link href={"/map"} className="py-8" onClick={toggleMenu}>
-                오시는 길
-              </Link>
-            </ul>
-          </>
+          <ul className="flex flex-col absolute top-16 right-0 bg-slate-800 white-text w-full text-center rounded-b-md">
+            <li><Link href={"/company"} className="block py-8" onClick={toggleMenu}>회사소개</Link></li>
+            <li><Link href={"/work"} className="block py-8" onClick={toggleMenu}>제품소개</Link></li>
+            <li><Link href={"/clients"} className="block py-8" onClick={toggleMenu}>주요거래처</Link></li>
+            {/* <li><Link href={"/board"} className="block py-8" onClick={toggleMenu}>상담문의</Link></li> */}
+            <li><Link href={"/map"} className="block py-8" onClick={toggleMenu}>오시는 길</Link></li>
+          </ul>
         )}
       </div>
     </div>

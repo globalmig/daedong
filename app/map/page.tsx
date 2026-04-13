@@ -6,14 +6,14 @@ import React from "react";
 export default function Map() {
   return (
     <>
-      <section className="mb-40">
+      <section className="mb-16">
         <Hero title={"오시는 길"} subtitle={"대동정밀 위치 및 연락처를 안내해드립니다."} img={"/img/bg_hero_factory.jpg"} priority />
       </section>
 
       <section className="max-w-[1440px] mx-auto px-4 mb-20">
         <div className="border-l-8 border-sky-700 pl-8 mb-10">
           <h2>찾아오시는 길</h2>
-          <p className="text-black/50">Location & Contact</p>
+          <p className="text-gray-600">Location & Contact</p>
         </div>
 
         <GoogleMap />

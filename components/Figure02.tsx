@@ -16,7 +16,7 @@ export default function Figure02(item: Figure01Props) {
       <div className="w-full max-w-[1440px]  flex flex-col md:flex-row items-center justify-center gap-10 mx-auto">
         {/* 이미지 영역 */}
         <div className="relative w-full md:w-[40%] h-[400px] md:h-[600px]">
-          <Image src={item.imgSrc} alt={item.title || "figure_02"} fill className="object-cover object-top rounded-lg shadow-lg" priority />
+          <Image src={item.imgSrc} alt={item.title || "figure_02"} fill sizes="(max-width: 768px) 100vw, 40vw" className="object-cover object-top rounded-lg shadow-lg" priority />
         </div>
 
         {/* 텍스트 영역 */}

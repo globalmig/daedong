@@ -5,17 +5,20 @@ import Footer from "@/components/Footer";
 import GNB from "@/components/GNB";
 import Script from "next/script";
 
-// 폰트 세팅
+// 폰트 세팅 (geist는 영문/코드용으로만 유지)
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
   weight: "100 900",
+  display: "swap",
 });
 const geistMono = localFont({
   src: "./fonts/GeistMonoVF.woff",
   variable: "--font-geist-mono",
   weight: "100 900",
+  display: "swap",
 });
+// Pretendard는 동적 서브셋 CDN으로 대체 (head의 <link> 태그로 로드)
 
 // ✅ SEO 메타데이터
 export const metadata: Metadata = {
@@ -80,16 +83,22 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased relative min-h-screen`}>
+      <head>
+        <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"
+        />
+      </head>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased relative min-h-screen flex flex-col`}>
         <GNB />
         <main className="flex-1 min-h-screen">{children}</main>
         <footer className="mt-auto">
           <Footer />
           {/* <!-- 공통 적용 스크립트 , 모든 페이지에 노출되도록 설치. 단 전환페이지 설정값보다 항상 하단에 위치해야함 --> */}
-          <Script src="//wsa.mig-log.com/wsalog.js" strategy="afterInteractive" />
+          {/* <Script src="//wsa.mig-log.com/wsalog.js" strategy="afterInteractive" />
           <Script id="wsa-init" strategy="afterInteractive">
             {`window.wsa = window.wsa || {}; window.wsa.inflow("www.daedong-precision.co.kr"); window.wsa_do(window.wsa);`}
-          </Script>
+          </Script> */}
         </footer>
 
         {/* ✅ 구조화 데이터 (JSON-LD) */}

@@ -1,13 +1,13 @@
 import Contact from "@/components/Contact";
 import GoogleMap from "@/components/GoogleMap";
-import Slider from "@/components/Slider";
 import Work from "@/components/Work";
 import ProductList from "@/components/ProductList";
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import Slider from "@/components/Slider";
 
-export default function main() {
+export default function Home() {
   return (
     <div>
       <section>
@@ -18,9 +18,9 @@ export default function main() {
       </section>
       <section className="py-14 md:py-20 border-t bg-gray-50">
         <div className="max-w-[1440px] mx-auto px-4">
-          <div className="border-l-8 border-sky-700 pl-8 mb-10 md:mb-16">
+          <div className="border-l-8 border-sky-700 pl-4 mb-10 md:mb-16">
             <h2 className="opacity-70">주요 거래처</h2>
-            <p className="text-black/50 mt-2">Major Clients</p>
+            <p className="text-gray-600 mt-2">Major Clients</p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
@@ -33,14 +33,14 @@ export default function main() {
               { name: "홍익대학교", src: "/img/logo_hongik.png" },
               { name: "세종대학교", src: "/img/logo_sejong.png" },
               { name: "건국대학교", src: "/img/logo_konkuk.png" },
-              { name: "단국대학교", src: "/img/logo_dankook.png" },
+              // { name: "단국대학교", src: "/img/logo_dankook.png" },
               { name: "순천향대학교", src: "/img/logo_soonchunhyang.png" },
               { name: "호서대학교", src: "/img/logo_hoseo.png" },
               { name: "한국공과대학교", src: "/img/logo_koreatech.png" },
             ].map((client) => (
               <Link key={client.name} href="/clients" className="flex items-center justify-center border bg-white border-gray-200 rounded-xl px-6 py-8 hover:border-sky-400 transition">
                 <div className="relative w-full h-24">
-                  <Image src={client.src} alt={client.name} fill className="object-contain" />
+                  <Image src={client.src} alt={client.name} fill sizes="(max-width: 768px) 50vw, (max-width: 1024px) 25vw, 18vw" className="object-contain" />
                 </div>
               </Link>
             ))}
@@ -51,8 +51,10 @@ export default function main() {
         <ProductList />
       </section>
 
-      <section className="max-w-[1440px] mx-auto py-14 md:py-20 mb-4 border-t">
-        <h2 className="px-4">오시는 길</h2>
+      <section className="max-w-[1440px] mx-auto px-4 py-14 md:py-20 mb-4 border-t">
+        <div className="border-l-8 border-sky-700 pl-8 mb-16">
+          <h2 className="">오시는 길</h2>
+        </div>
         <GoogleMap />
       </section>
       <section>

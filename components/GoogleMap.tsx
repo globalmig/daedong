@@ -2,9 +2,10 @@ import React from "react";
 
 export default function GoogleMap() {
   return (
-    <div className="relative w-full max-w-[1440px] mx-auto mt-10 px-4">
+    <div className="relative w-full max-w-[1440px] mx-auto mt-10 ">
       <iframe
         src="https://maps.google.com/maps?q=서울시+성동구+광나루로+229&output=embed"
+        title="대동정밀 위치 지도"
         width="1000"
         height="450"
         style={{ border: 0 }}

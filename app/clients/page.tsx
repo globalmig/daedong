@@ -67,13 +67,13 @@ const clients = [
     description: "서울 소재 종합대학교. 실험 및 연구 목적의 정밀 시험편 납품.",
     logoSrc: "/img/logo_konkuk.png",
   },
-  {
-    name: "Dankook University",
-    nameKo: "단국대학교",
-    category: "대학교",
-    description: "경기·충남 캠퍼스 보유 종합대학교. 실험실 연구용 시험편·장비 납품.",
-    logoSrc: "/img/logo_dankook.png",
-  },
+  // {
+  //   name: "Dankook University",
+  //   nameKo: "단국대학교",
+  //   category: "대학교",
+  //   description: "경기·충남 캠퍼스 보유 종합대학교. 실험실 연구용 시험편·장비 납품.",
+  //   logoSrc: "/img/logo_dankook.png",
+  // },
   {
     name: "Soonchunhyang University",
     nameKo: "순천향대학교",
@@ -106,8 +106,8 @@ export default function ClientsPage() {
 
       <section className="max-w-[1440px] mx-auto px-4 py-16 md:py-24">
         <div className="border-l-8 border-sky-700 pl-8 mb-16">
-          <h2>주요거래처</h2>
-          <p className="text-black/50">Major Clients</p>
+          <h2 className="mb-4">주요거래처</h2>
+          <p className="text-gray-600 text-base">Major Clients</p>
         </div>
 
         <p className="text-base md:text-lg leading-relaxed text-gray-700 mb-16 break-keep">
@@ -129,7 +129,7 @@ export default function ClientsPage() {
                 <span className="text-xs text-sky-600 font-semibold uppercase tracking-wide">{client.category}</span>
                 <h3 className="text-lg font-bold text-slate-800">{client.nameKo}</h3>
                 <p className="text-xs text-gray-400">{client.name}</p>
-                <p className="text-sm text-gray-600 leading-relaxed break-keep mt-2">{client.description}</p>
+                {/* <p className="text-sm text-gray-600 leading-relaxed break-keep mt-2">{client.description}</p> */}
               </div>
             </div>
           ))}
