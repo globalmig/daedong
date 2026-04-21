@@ -41,10 +41,7 @@ export default function WorkContent() {
   );
 
   const btnBase = "border-[1.2px] border-gray-300 shadow-md rounded-xl py-6 transition break-keep";
-  const btnClass = (active: boolean) =>
-    active
-      ? `${btnBase} bg-black text-white`
-      : `${btnBase} bg-white hover:bg-blue-50 hover:text-black`;
+  const btnClass = (active: boolean) => (active ? `${btnBase} bg-black text-white` : `${btnBase} bg-white hover:bg-blue-50 hover:text-black`);
 
   const options: { value: WorkType; label: string }[] = [
     { value: "specimens", label: "시험편 제작" },
@@ -67,16 +64,12 @@ export default function WorkContent() {
           aria-haspopup="listbox"
         >
           <span className="break-keep text-left">{currentLabel}</span>
-          <ChevronDown
-            className={`w-5 h-5 flex-shrink-0 text-gray-400 transition-transform duration-300 ${dropdownOpen ? "rotate-180" : ""}`}
-          />
+          <ChevronDown className={`w-5 h-5 flex-shrink-0 text-gray-400 transition-transform duration-300 ${dropdownOpen ? "rotate-180" : ""}`} />
         </button>
 
         <div
           className={`absolute left-4 right-4 mt-2 bg-white/95 backdrop-blur-xl rounded-3xl shadow-2xl overflow-hidden transition-all duration-200 ease-out origin-top ${
-            dropdownOpen
-              ? "opacity-100 scale-y-100 translate-y-0 pointer-events-auto"
-              : "opacity-0 scale-y-95 -translate-y-1 pointer-events-none"
+            dropdownOpen ? "opacity-100 scale-y-100 translate-y-0 pointer-events-auto" : "opacity-0 scale-y-95 -translate-y-1 pointer-events-none"
           }`}
           role="listbox"
           aria-label="제품 분류"
@@ -104,12 +97,7 @@ export default function WorkContent() {
       {/* md+: 버튼 탭 */}
       <div className="hidden md:grid md:grid-cols-5 gap-4 max-w-[1440px] mx-auto mt-20 px-4">
         {options.map((opt) => (
-          <button
-            key={opt.value}
-            className={btnClass(isType === opt.value)}
-            aria-pressed={isType === opt.value}
-            onClick={() => SelectType(opt.value)}
-          >
+          <button key={opt.value} className={btnClass(isType === opt.value)} aria-pressed={isType === opt.value} onClick={() => SelectType(opt.value)}>
             {opt.label}
           </button>
         ))}
@@ -139,7 +127,7 @@ export default function WorkContent() {
       {/* 시험기기 */}
       {isType === "equipment" && (
         <section className="pt-10 mb-32 max-w-[1440px] mx-auto flex flex-col gap-20">
-          <Figure01 direction="left" title="시험기기" description="고속인장충격시험기기 현재 세종대 건축토목과에서 사용중 입니다." imgSrc="/img/product_equipment.jpg" />
+          <Figure01 direction="left" title="시험기기" description="고속인장충격시험기기 현재 세종대, 한양대 토목건축과에서 사용중 입니다." imgSrc="/img/product_equipment.jpg" />
 
           <div className="px-4">
             <div className="border-l-8 border-sky-700 my-0 md:my-20 pl-8">
@@ -160,7 +148,7 @@ export default function WorkContent() {
           <Figure01
             direction="left"
             title="호이스트 / 컨베어 / 화물 리프트"
-            description="5,000kg급 호이스트 및 컨베어 벨트를 제작·납품합니다. 다양한 하중 및 환경 조건에 맞는 맞춤 제작이 가능합니다."
+            description="호이스트 및 컨베어 벨트를 제작·납품합니다. 다양한 하중 및 환경 조건에 맞는 맞춤 제작이 가능합니다."
             imgSrc="/img/product_hoist.jpg"
           />
 

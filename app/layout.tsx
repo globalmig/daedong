@@ -3,7 +3,6 @@ import localFont from "next/font/local";
 import "./globals.css";
 import Footer from "@/components/Footer";
 import GNB from "@/components/GNB";
-import Script from "next/script";
 
 // 폰트 세팅 (geist는 영문/코드용으로만 유지)
 const geistSans = localFont({
@@ -84,10 +83,7 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <head>
-        <link
-          rel="stylesheet"
-          href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"
-        />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased relative min-h-screen flex flex-col`}>
         <GNB />

@@ -11,7 +11,7 @@ const products = [
   },
   {
     title: "고속인장충격시험기기",
-    detail: "고속 인장 특성 측정 전용 시험 장비 제작·납품",
+    detail: "고속인장충격시험기기 제작",
     link: "/work?type=equipment",
     imgSrc: "/img/product_equipment.jpg",
   },
@@ -29,7 +29,7 @@ const products = [
   },
   {
     title: "컨베어 / 화물 리프트",
-    detail: "클린룸 및 일반 환경용 컨베어 제작·납품",
+    detail: "각종 컨베어 및 화물 리프트 제작",
     link: "/work?type=hoist",
     imgSrc: "/img/product_conveyor.png",
   },
