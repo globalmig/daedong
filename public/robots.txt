@@ -1,9 +1,0 @@
-# *
-User-agent: *
-Allow: /
-
-# Host
-Host: https://www.lkcustoms.co.kr
-
-# Sitemaps
-Sitemap: https://www.lkcustoms.co.kr/sitemap.xml
