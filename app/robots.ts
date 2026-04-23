@@ -6,7 +6,7 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://www.daedong-precision.co.kr/sitemap.xml",
-    host: "https://www.daedong-precision.co.kr",
+    sitemap: "https://www.ddjm.co.kr/sitemap.xml",
+    host: "https://www.ddjm.co.kr",
   };
 }

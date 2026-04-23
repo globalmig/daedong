@@ -21,7 +21,7 @@ const geistMono = localFont({
 
 // ✅ SEO 메타데이터
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.daedong-precision.co.kr"),
+  metadataBase: new URL("https://www.ddjm.co.kr"),
   title: {
     default: "대동정밀 | 시험편·지그 장비·호이스트·컨베어 전문 제작",
     template: "%s | 대동정밀",
@@ -31,13 +31,13 @@ export const metadata: Metadata = {
   authors: [{ name: "대동정밀" }],
   openGraph: {
     type: "website",
-    url: "https://www.daedong-precision.co.kr",
+    url: "https://www.ddjm.co.kr",
     title: "대동정밀 | 시험편·지그 장비·호이스트·컨베어 전문 제작",
     description: "1995년 창업, 30년 이상의 경험과 기술력으로 정밀 시험편·장비·지그를 제작합니다.",
     siteName: "대동정밀",
     images: [
       {
-        url: "https://www.daedong-precision.co.kr/img/SEO.png",
+        url: "https://www.ddjm.co.kr/img/SEO.png",
         width: 1200,
         height: 630,
         alt: "대동정밀 대표 이미지",
@@ -49,10 +49,10 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "대동정밀 | 시험편·지그 장비·호이스트·컨베어 전문 제작",
     description: "1995년 창업, 삼성SDI·삼성바이오로직스·세종대·건국대 납품 이력의 정밀 부품 전문 제작업체.",
-    images: ["https://www.daedong-precision.co.kr/img/SEO.png"],
+    images: ["https://www.ddjm.co.kr/img/SEO.png"],
   },
   alternates: {
-    canonical: "https://www.daedong-precision.co.kr",
+    canonical: "https://www.ddjm.co.kr",
   },
   robots: {
     index: true,
@@ -105,7 +105,7 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "LocalBusiness",
               name: "대동정밀",
-              url: "https://www.daedong-precision.co.kr",
+              url: "https://www.ddjm.co.kr",
               description: "금속 인장시험편, 충격시험편, 호이스트, 컨베어, 감속기 교체 장비, 지그 판금 가공용접 전문 제작.",
               address: {
                 "@type": "PostalAddress",
