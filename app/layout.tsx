@@ -26,14 +26,14 @@ export const metadata: Metadata = {
     default: "대동정밀 | 시험편·지그 장비·호이스트·컨베어 전문 제작",
     template: "%s | 대동정밀",
   },
-  description: "대동정밀은 1995년 창업 이래 30년 이상의 기술력으로 금속 인장시험편, 충격시험편, 호이스트, 컨베어, 각종 감속기 교체 장비, 지그 판금 가공용접을 전문 제작합니다.",
+  description: "금속 시험편·호이스트·컨베어·지그 제작 전문, 1995년 창업 30년 기술 대동정밀",
   keywords: ["대동정밀", "인장시험편", "충격시험편", "샤르피시험편", "호이스트", "컨베어", "감속기", "지그제작", "판금가공", "시험기기", "정밀부품"],
   authors: [{ name: "대동정밀" }],
   openGraph: {
     type: "website",
     url: "https://www.ddjm.co.kr",
     title: "대동정밀 | 시험편·지그 장비·호이스트·컨베어 전문 제작",
-    description: "1995년 창업, 30년 이상의 경험과 기술력으로 정밀 시험편·장비·지그를 제작합니다.",
+    description: "금속 시험편·호이스트·컨베어·지그 제작 전문, 1995년 창업 30년 기술 대동정밀",
     siteName: "대동정밀",
     images: [
       {
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "대동정밀 | 시험편·지그 장비·호이스트·컨베어 전문 제작",
-    description: "1995년 창업, 삼성SDI·삼성바이오로직스·세종대·건국대 납품 이력의 정밀 부품 전문 제작업체.",
+    description: "금속 시험편·호이스트·컨베어·지그 제작 전문, 1995년 창업 30년 기술 대동정밀",
     images: ["https://www.ddjm.co.kr/img/SEO.png"],
   },
   alternates: {
